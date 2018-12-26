@@ -9,14 +9,19 @@
 import UIKit
 
 class ViewController: UITableViewController {
-    var postArray = [CustomPo]
+    
+    var postArray = [Post(imageUrl: "testImage1", authorName: "jack", profilePic: "defaultProfile"),
+                     Post(imageUrl: "testImage2", authorName: "john", profilePic: "defaultProfile"),
+                     Post(imageUrl: "testImage3", authorName: "bill", profilePic: "defaultProfile")]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customPost") as! CustomPostCell
+        cell.imageView?.image = UIImage(named: postArray[indexPath.row].imageUrl)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

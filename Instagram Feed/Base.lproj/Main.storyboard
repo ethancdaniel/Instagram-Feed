@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="500" id="DmC-wX-HG6" customClass="PostCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customPost" rowHeight="500" id="DmC-wX-HG6" customClass="PostCell">
                                 <rect key="frame" x="0.0" y="28" width="375" height="500"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DmC-wX-HG6" id="dZY-Kf-t0F">
@@ -28,26 +28,30 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8UF-2L-f5E" userLabel="Image">
                                             <rect key="frame" x="16" y="55" width="343" height="338"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QAX-cB-kvt" userLabel="likeButton">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QAX-cB-kvt" userLabel="likeButton">
                                             <rect key="frame" x="16" y="401" width="30" height="30"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ke8-Vn-fzu" userLabel="commentButton">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="comment" translatesAutoresizingMaskIntoConstraints="NO" id="Ke8-Vn-fzu" userLabel="commentButton">
                                             <rect key="frame" x="54" y="401" width="30" height="30"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Dw-Fk-5yP" userLabel="sendButton">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="send" translatesAutoresizingMaskIntoConstraints="NO" id="4Dw-Fk-5yP" userLabel="sendButton">
                                             <rect key="frame" x="92" y="401" width="30" height="30"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vHk-UU-9Z5" userLabel="bookmarkButton">
-                                            <rect key="frame" x="329" y="401" width="30" height="30"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="bookmark" translatesAutoresizingMaskIntoConstraints="NO" id="vHk-UU-9Z5" userLabel="bookmarkButton">
+                                            <rect key="frame" x="311" y="401" width="48" height="30"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zk2-Jb-55I" userLabel="authorLabel">
-                                            <rect key="frame" x="54" y="26" width="33" height="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zk2-Jb-55I" userLabel="authorLabel">
+                                            <rect key="frame" x="56" y="21" width="33" height="15"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zOH-Tf-qrD" userLabel="authorProfilePicture">
-                                            <rect key="frame" x="16" y="17" width="30" height="30"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfile" translatesAutoresizingMaskIntoConstraints="NO" id="zOH-Tf-qrD" userLabel="authorProfilePicture">
+                                            <rect key="frame" x="16" y="11" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="Thh-hH-Pyj"/>
+                                                <constraint firstAttribute="height" constant="30" id="tkp-II-FUf"/>
+                                            </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="X HOURS AGO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHZ-SI-vMY" userLabel="timestampLabel">
                                             <rect key="frame" x="16" y="439" width="83" height="14"/>
@@ -57,9 +61,10 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="zk2-Jb-55I" firstAttribute="top" secondItem="dZY-Kf-t0F" secondAttribute="topMargin" constant="10" id="9hY-p3-YL6"/>
                                         <constraint firstItem="Ke8-Vn-fzu" firstAttribute="top" secondItem="8UF-2L-f5E" secondAttribute="bottom" constant="10" id="CIs-mq-LUg"/>
-                                        <constraint firstItem="zk2-Jb-55I" firstAttribute="leading" secondItem="zOH-Tf-qrD" secondAttribute="trailing" constant="10" id="Etp-Xm-KZj"/>
                                         <constraint firstItem="LHZ-SI-vMY" firstAttribute="top" secondItem="QAX-cB-kvt" secondAttribute="bottom" constant="10" id="Go9-KU-qBj"/>
+                                        <constraint firstItem="zk2-Jb-55I" firstAttribute="leading" secondItem="zOH-Tf-qrD" secondAttribute="trailing" constant="10" id="H9o-YK-P8F"/>
                                         <constraint firstItem="4Dw-Fk-5yP" firstAttribute="leading" secondItem="Ke8-Vn-fzu" secondAttribute="trailing" constant="10" id="HAg-FD-KHZ"/>
                                         <constraint firstItem="vHk-UU-9Z5" firstAttribute="trailing" secondItem="dZY-Kf-t0F" secondAttribute="trailingMargin" id="IaT-fX-vMs"/>
                                         <constraint firstItem="LHZ-SI-vMY" firstAttribute="leading" secondItem="dZY-Kf-t0F" secondAttribute="leadingMargin" id="OYG-Mq-3DJ"/>
@@ -67,7 +72,6 @@
                                         <constraint firstItem="zOH-Tf-qrD" firstAttribute="leading" secondItem="dZY-Kf-t0F" secondAttribute="leadingMargin" id="bGK-iM-cxO"/>
                                         <constraint firstItem="QAX-cB-kvt" firstAttribute="leading" secondItem="dZY-Kf-t0F" secondAttribute="leading" constant="20" symbolic="YES" id="can-LZ-LQV"/>
                                         <constraint firstItem="zOH-Tf-qrD" firstAttribute="top" secondItem="dZY-Kf-t0F" secondAttribute="topMargin" id="ciE-vZ-b7m"/>
-                                        <constraint firstItem="zk2-Jb-55I" firstAttribute="top" secondItem="dZY-Kf-t0F" secondAttribute="topMargin" constant="15" id="jfc-9H-qsz"/>
                                         <constraint firstItem="Ke8-Vn-fzu" firstAttribute="leading" secondItem="QAX-cB-kvt" secondAttribute="trailing" constant="10" id="ohH-pT-D4k"/>
                                         <constraint firstItem="4Dw-Fk-5yP" firstAttribute="top" secondItem="8UF-2L-f5E" secondAttribute="bottom" constant="10" id="qm6-no-fNG"/>
                                         <constraint firstItem="QAX-cB-kvt" firstAttribute="top" secondItem="8UF-2L-f5E" secondAttribute="bottom" constant="10" id="uGd-PV-5B4"/>
@@ -91,6 +95,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Instagram" id="SEF-j5-0Sd"/>
+                    <connections>
+                        <outlet property="tableView" destination="01k-9Z-H99" id="1aL-DO-1fF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lEM-LF-bn2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -115,4 +122,10 @@
             <point key="canvasLocation" x="556" y="15.742128935532236"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bookmark" width="48" height="48"/>
+        <image name="comment" width="48" height="48"/>
+        <image name="defaultProfile" width="240" height="240"/>
+        <image name="send" width="48" height="48"/>
+    </resources>
 </document>
