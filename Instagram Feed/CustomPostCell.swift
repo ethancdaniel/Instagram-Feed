@@ -15,7 +15,9 @@ class CustomPostCell : UITableViewCell {
     @IBOutlet weak var commentButton: UIImageView!
     @IBOutlet weak var sendButton: UIImageView!
     @IBOutlet weak var bookmarkButton: UIImageView!
-    @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var timestampLabel: UILabel!
+    @IBOutlet weak var moreButton: UIImageView!
+    @IBOutlet weak var authorProfilePicture: UIImageView!
+    @IBOutlet weak var authorLabel: UILabel!
+    
 }
